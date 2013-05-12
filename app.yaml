@@ -1,0 +1,12 @@
+application: developer-support-handbook
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /
+  static_files: _build/html/index.html
+  upload: _build/html/index.html
+
+- url: /
+  static_dir: _build/html/

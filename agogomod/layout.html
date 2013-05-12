@@ -1,0 +1,102 @@
+{#
+    agogo/layout.html
+    ~~~~~~~~~~~~~~~~~
+
+    Sphinx layout template for the agogo theme, originally written
+    by Andi Albrecht.
+
+    :copyright: Copyright 2007-2011 by the Sphinx team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+#}
+{% extends "basic/layout.html" %}
+
+{% block header %}
+    <div class="header-wrapper">
+      <div class="header">
+        {%- if logo %}
+          <p class="logo"><a href="{{ pathto(master_doc) }}">
+            <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+          </a></p>
+        {%- endif %}
+        {%- block headertitle %}
+        <h1><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a></h1>
+        {%- endblock %}
+        <div class="rel">
+          {%- for rellink in rellinks|reverse %}
+          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+          {%- if not loop.last %}{{ reldelim2 }}{% endif %}
+          {%- endfor %}
+        </div>
+       </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+          {%- block document %}
+            {{ super() }}
+          {%- endblock %}
+        </div>
+        <div class="sidebar">
+          {%- block sidebartoc %}
+          <h3>{{ _('Table Of Contents') }}</h3>
+          {{ toctree() }}
+          {%- endblock %}
+          {%- block sidebarsearch %}
+          <h3 style="margin-top: 1.5em;">{{ _('Search') }}</h3>
+          <form class="search" action="{{ pathto('search') }}" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="{{ _('Go') }}" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            {{ _('Enter search terms or a module, class or function name.') }}
+          </p>
+          {%- endblock %}
+          <h3 style="margin-top: 1.5em;">{{ _('Other Formats') }}</h3>
+           <a href="http://www.lulu.com/product/paperback/developer-support-handbook/15214068">
+           <img src="http://static.lulu.com/product/paperback/developer-support-handbook/15214068/thumbnail/320" style="width:150px">
+           </a>
+           <p>
+           You can purchase a <a href="http://www.lulu.com/product/paperback/developer-support-handbook/15214068">print copy</a> or <a href="http://www.lulu.com/product/ebook/developer-support-handbook/15213896">download a PDF</a> at Lulu.com.
+           </p>
+           <br>
+           <p>You can also checkout the source files from <a href="http://code.google.com/p/developer-support-handbook/">Google Code</a>.</p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+
+          {%- for rellink in rellinks|reverse %}
+          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+          {%- if not loop.last %}{{ reldelim2 }}{% endif %}
+          {%- endfor %}
+          {%- if show_source and has_source and sourcename %}
+            <br/>
+            <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
+               rel="nofollow">{{ _('Show Source') }}</a>
+          {%- endif %}
+        </div>
+
+        <div class="right">
+          {{ super() }}
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="float: right; margin-left: 5px; border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />The materials are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>.
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block relbar1 %}{% endblock %}
+{% block relbar2 %}{% endblock %}
