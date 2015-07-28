@@ -1,0 +1,180 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mention Monitoring &mdash; Developer Support Handbook</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Developer Support Handbook" href="index.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <h1><a href="index.html">Developer Support Handbook</a></h1>
+        <div class="rel">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mention-monitoring">
+<h1>Mention Monitoring<a class="headerlink" href="#mention-monitoring" title="Permalink to this headline">¶</a></h1>
+<p>It&#8217;s important to find out what the world thinks of your API, and
+to find out what they&#8217;re doing with it. There&#8217;s a lot you can find
+out from just paying attention to the comments on your forum and
+issue tracker, but not every developer will channel their thoughts
+into those places. Some will write about it on their blogs, some
+will rant or rave about it on their social network, some will issue
+press releases. The general strategy is to subscribe to searches
+using keywords associated with your API across various searchers.</p>
+<div class="section" id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">¶</a></h2>
+<p>The first step is to determine what keywords you&#8217;ll be searching.
+Your API might have an official title, but that title might be too
+long for the average developer to use, or perhaps there are
+nicknames for it. For example, we have an API officially called
+&#8220;The Google Maps API for Flash&#8221;. I in no way expect developers to
+type that out, and I can&#8217;t be bothered to do it myself most of the
+time. So, keywords for that might be &#8220;flash maps api&#8221;, &#8220;flash maps,
+&#8220;google maps flash api&#8221;, etc. Our JavaScript API, since it was the
+first mapping API we offered, is typically just called the &#8220;Google
+Maps API&#8221;, but since the class name for creating a map in that was
+GMap, developers also tend to abbreviate it as simply &#8220;gmaps&#8221;. So,
+appropriate keywords for that API would be &#8220;google maps api&#8221;,
+&#8220;gmaps api&#8221;, etc.</p>
+</div>
+<div class="section" id="google-alerts">
+<h2>Google Alerts<a class="headerlink" href="#google-alerts" title="Permalink to this headline">¶</a></h2>
+<p>Google provides a service called Google Alerts, and it basically
+lets you subscribe to new results for particular search terms, or
+new search results that link back to a particular page. They&#8217;re a
+great way of seeing what the web is saying about a particular
+topic, and people use them for lots of reasons. Many of us nerds
+with low self-confidence have a vanity search (for our name) so we
+can see what the world thinks of us (hopefully good things). You
+can setup an alert and subscribe to that via
+daily/weekly/as-they-happen alerts, and even subscribe to it as an
+RSS feed (?). I have daily alerts set up for all of my searches, so
+that I go through them once a day and see if there&#8217;s anything of
+interest.</p>
+</div>
+<div class="section" id="twitter-searches">
+<h2>Twitter Searches<a class="headerlink" href="#twitter-searches" title="Permalink to this headline">¶</a></h2>
+<p>Google can index nearly the entire world, but apparently that
+mostly excludes Twitter. For the most part, Google Alerts will not
+show you many results from Twitter &#8211; simply because they happen
+too fast and from so many different account pages, I suppose &#8211; so
+you need to setup a separate Twitter search to track your API. The
+basic twitter search functionality can be accessed from
+search.twitter.com, and you can enter any query there and refresh
+the page when there are new results. For a bit better experience,
+you can use a Twitter client like Tweetdeck (AIR desktop app) or
+PeopleBrowsr (web app), and you can ask those apps to notify you
+when there are new results for your specified search terms. In
+addition to the keywords you came up with earlier, you should
+consider searching for those phrases with the whitespace stripped,
+as tweeters like to turn everything into a hash tag (e.g. &#8220;google
+maps api&#8221; becomes &#8220;#googlemapsapi&#8221;). If you have a Twitter account
+for the API itself (which I recommend), then you should of course
+also be monitoring mentions of that account&#8217;s name. Note that once
+people know the account username, they will tend to use that as the
+hashtag as well, so having an account is a good way of
+standardizing the hashtag used.
+Twitter search has been a good way of finding out that a service is
+down or broken - tweeting is so much easier to do than posting in a
+forum or issue tracker, so people take to that first as a place to
+complain about an issue. So, try to monitor it somewhat real-time,
+so that you know something&#8217;s wrong as soon as the twitterverse
+does.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forum.html">Forum Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issuetracking.html">Issue Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topdevelopers.html">Top Developers</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+          <h3 style="margin-top: 1.5em;">Other Formats</h3>
+           <a href="http://www.lulu.com/product/paperback/developer-support-handbook/15214068">
+           <img src="http://static.lulu.com/product/paperback/developer-support-handbook/15214068/thumbnail/320" style="width:150px">
+           </a>
+           <p>
+           You can purchase a <a href="http://www.lulu.com/product/paperback/developer-support-handbook/15214068">print copy</a> or <a href="http://www.lulu.com/product/ebook/developer-support-handbook/15213896">download a PDF</a> at Lulu.com.
+           </p>
+           <br>
+           <p>You can also checkout the source files from <a href="https://github.com/pamelafox/developer-support-handbook/">Github</a>.</p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="genindex.html" title="General Index"
+             >index</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2011, Pamela Fox.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="float: right; margin-left: 5px; border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />The materials are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>.
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

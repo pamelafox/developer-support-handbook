@@ -1,0 +1,540 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Issue Tracking &mdash; Developer Support Handbook</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Developer Support Handbook" href="index.html" />
+    <link rel="next" title="Communication" href="communication.html" />
+    <link rel="prev" title="Forum Support" href="forum.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <h1><a href="index.html">Developer Support Handbook</a></h1>
+        <div class="rel">
+          <a href="forum.html" title="Forum Support"
+             accesskey="P">previous</a> |
+          <a href="communication.html" title="Communication"
+             accesskey="N">next</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="issue-tracking">
+<h1>Issue Tracking<a class="headerlink" href="#issue-tracking" title="Permalink to this headline">¶</a></h1>
+<p>A public web API is one of the hardest types of software to write, because your
+audience is unknown and their use cases are infinite. If you are designing an
+API for internal use within your company, you can pretty much understand how
+they are expecting to use it and make it do what your colleagues want.  But when
+you are designing an API that can be consumed by any web developer anywhere in
+the world, you can predict how a good portion of those developers will use it -
+but there will always be a fraction that wants to use it differently.</p>
+<p>At last count, the Google Maps API is used by more than 300,000 developers. Most
+of them are simply putting a map on a page, and dotting some markers on top.
+But a handful of them are using it for something completely different. You could
+ignore that handful, but often times, those innovative developers are the ones
+that attract many users and get other developers excited about your API.</p>
+<p>The basic point is this: your API is not perfect, atleast not to everyone using
+it. Your API will have bugs that developers suffer from (both the obvious
+cross-browser compatibility bugs, and the more subtle
+its-not-what-the-developer-expected bugs) and your API will lack in features
+that developers want. Developers don&#8217;t expect your API to be perfect, but they
+do expect for their voice to be heard when they report a bug or request
+a feature. Your developers should be helping you shape the future of your API, and
+listening to their issues is a way of showing them that you care about their
+feedback.  (You don&#8217;t need to implement every feature or fix every bug, but you
+should listen regardless).</p>
+<p>When you&#8217;re small and starting out, you can handle
+this in a forum, but when you get beyond a certain threshold of developers and
+bugs, you really should start using an issue tracker.</p>
+<div class="section" id="issue-tracker-features">
+<h2>Issue Tracker Features<a class="headerlink" href="#issue-tracker-features" title="Permalink to this headline">¶</a></h2>
+<p>An issue tracker is a structured way for developers to voice their needs and
+wants, and it typically includes these features:</p>
+<ul class="simple">
+<li><strong>Comments</strong>: Gives other developers an opportunity to comment on the issue, to
+give workarounds, additional data, or additional use cases.</li>
+<li><strong>Votes</strong>: Gives other developers a way to show their support for an issue (like by
+starring or voting for it.)</li>
+<li><strong>Status</strong>: Gives the API team a way to change the status of issues, from Open to
+Closed, and everything in between.</li>
+<li><strong>Duplicates</strong>: Gives the API team a way to mark issues as duplicates of eachother,
+so that all interested developers are subscribing to the same issue.</li>
+<li><strong>Notification</strong>: Notifies interested developers immediately when an issue is
+closed (ideally by email), so that they can remove workarounds in their code
+or add blocked features.</li>
+<li><strong>Categorization</strong>: Gives the API team a way to categorize the issues to make it
+easier to find issues affecting different aspects of the API.</li>
+<li><strong>Search</strong>: Gives everyone a way to search and sort for issues that may be
+relevant to them.</li>
+<li><strong>Statistics</strong>: Gives the API team a way to visualize which issues are the most
+important to developers, to help them prioritize their internal roadmap
+accordingly.</li>
+</ul>
+<p>There are various public and open-source issue tracking systems,
+and many of them are related to either forum software or source code repository
+hosting software. You can often choose to only use the issue tracking aspect,
+however. Some popular ones are:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.atlassian.com/software/jira/">JIRA</a>: A full-featured issue tracker which can also be used for project
+tracking.</li>
+<li><a class="reference external" href="http://www.github.com">Github</a>: A git source host that includes simple but nearly full-featured
+issue tracking for each repository.</li>
+<li><a class="reference external" href="http://code.google.com/p/">Google Code Project Hosting</a>: A code project host that includes issue
+tracking for each project. Similar to Github issue tracking, but with
+more customization and statistics.</li>
+<li><a class="reference external" href="http://www.bugzilla.org/">Bugzilla</a>: A full-featured and open-source issue tracker, created by
+Mozilla and used by their products.</li>
+<li><a class="reference external" href="http://trac.edgewall.org/">Trac</a>: A full-featured and open-source issue tracker which can be
+connected to a subversion repository if desired.</li>
+</ul>
+<p>For Google APIs, we always use <a class="reference external" href="http://code.google.com/p/">Google Code Project Hosting</a>, so I am the most
+familiar with that. Read below for an in-depth discussion of setting up
+a Google Code issue tracker.</p>
+</div>
+<div class="section" id="issue-handling-guidelines">
+<h2>Issue Handling Guidelines<a class="headerlink" href="#issue-handling-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>Regardless of which issue tracker you choose and what features it has,
+you should take care in responding to issues in a timely manner and
+reacting to issues in a way that benefits your API.</p>
+<div class="section" id="responding-to-issues">
+<h3>Responding to Issues<a class="headerlink" href="#responding-to-issues" title="Permalink to this headline">¶</a></h3>
+<p>When you have an issue tracker for a product, you should make sure to be
+responsive to it on a regular basis. If you don&#8217;t respond to filed issues,
+developers will feel once again that they&#8217;re filing bugs into an abyss, and
+you&#8217;re back at square one. A good response rate to maintain is weekly - i.e. all
+new issues are responded to within a week of filing. There are a few ways to
+make sure of this.</p>
+<div class="section" id="email-filters">
+<h4>EMail Filters<a class="headerlink" href="#email-filters" title="Permalink to this headline">¶</a></h4>
+<p>When a new issue comes into my GMail inbox, I set filters so that it is
+automatically labeled as an issue for a particular API (Maps, Wave, etc). If I
+see that the issue is very easy to respond to (like if its a duplicate or a
+misdirected issue), then I may immediately respond. If not, I add the tag
+&#8220;TRIAGE-LATER&#8221; and archive it. I have GMail setup using the multiple inboxes
+lab, so that the &#8220;TRIAGE-LATER&#8221; inbox is below my main one, a constant reminder
+of issues that need a response. Then, I can check that label every few days at
+work, and respond to the issues, in the order of oldest to newest.</p>
+</div>
+<div class="section" id="triage-meetings">
+<h4>Triage Meetings<a class="headerlink" href="#triage-meetings" title="Permalink to this headline">¶</a></h4>
+<p>It&#8217;s not always so fun to respond to isses by your lonesome - you may not feel
+confident in your answer, you may not know enough to respond, etc. When you have
+the resources to do so, it can be a much better experience to triage with
+colleagues.</p>
+<p>On Maps API, we did triage meetings in person, and ordered the triaging by API,
+so that the JS API engineer only had to be there for first bit, and the Flash
+API engineer only had to be there for the last bit.</p>
+<p>On Wave APIs, we conducted the triage the meetings inside a Wave, and it worked
+remarkably well. Once a week, I&#8217;d start up a wave with my colleague and the API
+engineering team mailing list, and paste the non-triaged issues in.
+Then, my colleague and I would pick a bug, indicate in the wave that we&#8217;re
+looking at it, converse about it for a bit, and indicate when we&#8217;d responded to
+it. By doing it in one wave, we were able to multi-task. I could work on a bug
+while still chatting with my colleague about his bug, and effectively, we get
+twice the bug triaging done. If we wanted a member of the API engineering team to
+give his opinion, we could bring him on the wave. We also used those meetings to
+respond to unanswered forum posts, as we had a similar response time goal for
+those. If there was a surge in issues in a particular week, we scheduled
+additional triage meetings. Wave is now deprecated, but perhaps Google Docs
+with commenting could be used in a similar way.</p>
+<p>Some APIs also do their triaging over chat, IRC, etc. All that really matters is
+that you are responding to issues in a timely and efficient manner, in a way
+that works for you.</p>
+</div>
+</div>
+<div class="section" id="reacting-to-issues">
+<h3>Reacting to Issues<a class="headerlink" href="#reacting-to-issues" title="Permalink to this headline">¶</a></h3>
+<p>One of the benefits of an issue tracker is that its data can be used to guide
+product decisions, like what bugs to fix or features to fulfill. Google Code
+issue trackers have the &#8220;starring&#8221; mechanism and sort-by-starring, so it is very
+easy to look at your issues and see which have been starred the most. It is also
+very easy to let that guide all of your product decisions - but it is dangerous
+to do so, particularly when it comes to feature requests.</p>
+<p>When we first launched the Maps API for Flash, the Flash community rejoiced-
+and then a few vocal developers said &#8220;But why is there no AIR support?&#8221; They
+then created a feature request for AIR support and asked developers to star it
+in their blogs. We saw more activity on that AIR request than on any other
+request previously, and we acted on it. We went through a fair bit of
+engineering effort to make our API work for AIR, and we launched it, expecting a
+large response or increase in developers. This didn&#8217;t happen. Sure, a few AIR
+apps trickled in over the next few months, but nothing proportional to the
+amount of stars on that request.</p>
+<p>So, you need to be careful when evaluating feature requests. You need to pay
+attention to whether an issue was blogged or linked by someone - that will
+distort the # of stars. You need to decide if this is a feature request that
+developers feel they &#8220;deserve to have&#8221; versus a request that most developers
+don&#8217;t realize they want, but will use up-the-wazoo if it existed. You also need
+to decide what requests will bring in more developers versus make the current
+users happier. You can use stars to guide you, certainly - but don&#8217;t let them
+make the decisions for you. (As we learned the hard way).</p>
+<p>On the other hand, it is quite useful to use stars to guide your bug fixes
+timeline, as those numbers aren&#8217;t often distorted. For example, if a developer
+files a bug, and no other developer stars that other bug for months, then you
+can probably safely assume that the bug is a very-low-priority or wont-fix. If a
+developer files a regression bug, and 10 other developers star it on the same
+day, then there is a good chance that it is a high-priority bug. You should keep
+in mind which bugs are preventing further development and which bugs have viable
+workarounds - you may even want to label an issue with &#8220;Workaround-True&#8221; to make
+it easy to visualize that. As much as it sucks, developers are used to working
+around issues (especially on the web), and are often happy if they have an
+easy-to-implement workaround. If there&#8217;s none at all- well, you better get that
+fix in stat.</p>
+</div>
+</div>
+<div class="section" id="google-code-issue-tracker">
+<h2>Google Code Issue Tracker<a class="headerlink" href="#google-code-issue-tracker" title="Permalink to this headline">¶</a></h2>
+<p>When I started at Google, we did not use issue trackers for any of our APIs,
+and I soon realized that we really needed to. After trying a few custom
+solutions, I discovered <a class="reference external" href="http://code.google.com/p/">Google Code Project Hosting</a> and created the
+<a class="reference external" href="http://gmaps-api-issues.googlecode.com">Maps API issue tracker</a>. Nowadays, most every Google API
+has an associated Google Code issue tracker.</p>
+<p>The Google Code issue trackers are full-featured, including:</p>
+<ul class="simple">
+<li>Commenting</li>
+<li>Labels</li>
+<li>Templates</li>
+<li>Starring</li>
+<li>Email Notification</li>
+<li>RSS feeds</li>
+<li>Custom Search &amp; Sort</li>
+<li>Full Read/Write HTTP API</li>
+<li>Wiki Pages</li>
+</ul>
+<p>They are both simple in their interface, but through the ability
+to specify custom labels and templates, they can be customized to support
+a wide variety of APIs. I&#8217;ve written up my customization tips here.
+You should also read through the <a class="reference external" href="http://code.google.com/p/support/wiki/IssueTracker">Issue Tracker official documentation</a>.</p>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>If you&#8217;re going to use a Google Code issue tracker, here&#8217;s a walkthrough of
+configuring it, with an explanation of what I&#8217;ve configured and why.
+Most of the following can be configured in the &#8220;Administer-&gt;Issue Tracking&#8221;
+control panel.</p>
+<div class="section" id="labels">
+<h4>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h4>
+<p>A &#8220;label&#8221; is basically metadata about an issue in the form of a label name and
+value - e.g. &#8220;ApiType-JavaScript&#8221;, &#8220;Type-Defect&#8221;. The issue trackers come with a
+set of suggested labels, based on those commonly used in software projects, but
+you can also suggest your own custom labels. When you use labels on issues, you
+can then search and sort by labels, and link to those results (e.g. all open
+Maps API bugs). Basically, labels are everything, and the more you use and
+customize labels, the more useful your issue tracker will become.</p>
+<div class="section" id="status-label">
+<h5>Status label<a class="headerlink" href="#status-label" title="Permalink to this headline">¶</a></h5>
+<p>One label has a bit of a special status - and that is, conveniently, the
+&#8220;Status&#8221; label. This label indicates to the issue tracker whether an issue is
+open or closed, and that affects the searchability of an issue. By default,
+searches are only performed on open bugs, as typically users aren&#8217;t affected by
+fixed bugs. So, the issue tracker lets you designate the various values that
+equate to open versus closed.</p>
+<p>The default status values are shown below:</p>
+<p><img alt="statusdefault" src="_images/screenshot_issuetracking_statusdefault.png" /></p>
+<p>After using those defaults for a while, I quickly realized that they didn&#8217;t
+quite work for my needs. Here are the status values that I use in the <cite>Google
+Maps API issue tracker</cite>:</p>
+<p><img alt="openclosed" src="_images/screenshot_issuetracking_openclosed.png" /></p>
+<p>Here are the changes I made and why:</p>
+<ul class="simple">
+<li>&#8220;Accepted&#8221; -&gt; &#8220;Acknowledged/Confirmed&#8221;: The default values only contained one
+way of saying &#8220;Yes, we&#8217;ve seen this issue and noted it as a real issue,&#8221; and
+that value was &#8220;Accepted.&#8221; This worked fine for bugs, but not for feature
+requests. Developers thought that &#8220;Accepted&#8221; meant that we were actually taking
+on the feature request, and wondered why it was taking so long to fulfill their
+requests - when in fact, we simply meant to say that it was a valid request, and
+that we might fulfill it one day, given substantial resources and evidence of
+its of its utility to other developers. So, we now use &#8220;Confirmed&#8221; for bugs,
+after replicating the bug ourselves, and &#8220;Acknowledged&#8221; for feature requests,
+after deciding it is a valid request for the scope of our API, and confirming it
+isn&#8217;t fulfilled in some other way (like by an open source library). Anecdotally,
+I believe this has led to less developers feeling teased.</li>
+<li>&#8220;NeedsMoreInfo&#8221;: Oftentimes, a developer posts what sounds like a valid bug, but
+doesn&#8217;t provide enough information to replicate. So, we use this label to
+indicate that we have reviewed the issue atleast once and are awaiting further
+clarification from the developer. Once they provide enough info, it moves on to
+one of the other labels. If they never provide the info after a substantial
+amount of time, we can assume the bug was not important enough to them and close
+it.</li>
+<li>&#8220;FixedNotReleased&#8221;: Since our API code changes happen internally and are not
+available for developers until the next release of the API, we can&#8217;t immediately
+mark an issue as fixed when it&#8217;s fixed internally. But, in the case of a bug, I
+like to let developers know that a fix is imminent, so that they can plan their
+own development accordingly. And at release time, I also find it handy to have a
+list of the issues that I think were fixed in that release, so that I can easily
+create a changelog. I will rarely use this for feature requests, since we often
+like the fulfillment of those to be a surprise. It can sometimes confuse
+developers who are new to the API when they see an issue marked as
+FixedNotReleased, so it can be helpful to leave a comment like &#8220;This bug has
+been fixed internally and the fix is expected to go out in the next release.
+Releases are weekly.&#8221;</li>
+<li>&#8220;PostElsewhere&#8221;: We often get people posting requests in issue trackers that
+don&#8217;t quite belong there. They either belong in a forum (i.e. it&#8217;s a developer
+looking for help debugging their own code), or they belong in a different issue
+tracker. When I mark an issue as PostElsewhere, I always leave a note about
+where they should post their issue, and I try to be as nice as possible (to
+avoid people feeling like they&#8217;re on an endlessly redirected phone call with
+customer support). It can be useful to review the PostElsewhere issues every so
+often to see if the messaging should be changed to reduce the number of
+misdirected issues.</li>
+</ul>
+</div>
+<div class="section" id="predefined-custom-labels">
+<h5>Predefined custom labels<a class="headerlink" href="#predefined-custom-labels" title="Permalink to this headline">¶</a></h5>
+<p>The issue tracker suggests the following set of predefined labels, for setting
+attributes like issue type, priority, OS, etc:</p>
+<p><img alt="predefineddefault" src="_images/screenshot_issuetracking_predefined_default.png" /></p>
+<p>Depending on your project, you will probably end up changing most of these (or
+not using them). Here&#8217;s what I came up with for the Maps API:</p>
+<p><img alt="predefinedall" src="_images/screenshot_issuetracking_predefined_all.png" /></p>
+<ul class="simple">
+<li>&#8220;Type&#8221;: I retained only the &#8220;Defect&#8221; and &#8220;Enhancement&#8221; values, as I didn&#8217;t find
+a need for the others. I have contemplated changing those values to &#8220;Bug&#8221; and
+&#8220;FeatureRequest&#8221; as that is the more common nomenclature these days.</li>
+<li>&#8220;Component&#8221;: Most issues are about the actual API code itself, but some issues
+are about related components: the documentation, and the maps data. To
+distinguish those from the engineering issues, I created components for them -
+&#8220;Docs&#8221; and &#8220;Data&#8221;. (And yes, I think that you should welcome developers filing
+documentation bugs - documentation usability is just as important as API
+usability).</li>
+<li>&#8220;ApiType&#8221;: Because of the overlap across the different Maps APIs (Flash, JS,
+etc) both in terms of issues and the engineering team, I decided to use the same
+issue tracker for all of the APIs. To make sure I could easily distinguish the
+issues (in links and searches), I created this label and its values. As a bonus,
+I can assign multiple values of this label to an issue if it crosses multiple
+APIs.</li>
+<li>&#8220;Regression&#8221;: The worst kind of bugs are regressions. If something worked for a
+developer and suddenly doesn&#8217;t work, then that is the first thing you should
+fix. To make sure I can easily see what current regression issues we have, I use
+this label. I typically only set the label in the case that an issue is a
+regression, and then search for &#8220;Regression-Yes&#8221;.</li>
+<li>&#8220;Browser&#8221;: The vast majority of the Maps API bugs are browser dependent, and I
+find that many bugs in web-based projects are browser-dependent. I use this
+label to designate the affected browser(s) for browser-dependent issues. I can
+then search for issues that our IE 6 experts can fix (it sucks to be known as an
+IE6 expert, but these things happen), and visualize the distribution of issues
+to see what browser is causing us the most headaches.</li>
+<li>&#8220;Internal&#8221;: This label is a bit different than the others, in that it has no
+preset values. I use this label on an issue so that I can relate it to the
+sister issue in our internal bug-tracking system (e.g. &#8220;Internal-1234567&#8221;).
+Though it can be a bit annoying to track issues both internally and externally,
+we track externally so that we can make private comments and attach code
+changelists to the issue. Some of my colleagues use greasemonkey scripts or
+Chrome extensions to easily visualize both internal and external data at once.</li>
+</ul>
+</div>
+<div class="section" id="caveat">
+<h5>Caveat<a class="headerlink" href="#caveat" title="Permalink to this headline">¶</a></h5>
+<p>Only members of a project can assign labels when editing an issue. Non-members
+can only leave comments or star issues. It would be handy if non-members were
+allowed to assign some labels to an issue, but not others (i.e. you wouldn&#8217;t
+want a non-member to mark an issue as fixed, but you would welcome them
+characterizing it as an IE8 issue). You can use issue templates (described next)
+to somewhat solve this need, however.</p>
+</div>
+</div>
+<div class="section" id="issue-templates">
+<h4>Issue Templates<a class="headerlink" href="#issue-templates" title="Permalink to this headline">¶</a></h4>
+<p>When a developer click &#8220;New issue&#8221; in an issue tracker, they are given a default
+template to fill out, shown below:</p>
+<p><img alt="templatedefault" src="_images/screenshot_issuetracking_template_default.png" /></p>
+<p>This template gives standard questions for bug replication, and adds default
+&#8220;Type&#8221; and &#8220;Priority&#8221; labels. Now, after you&#8217;ve created a set of labels for your
+product, you will probably also want to customize this template for your own
+needs, and you may also want to create more than just a bug and feature request
+template. For the Maps API, I created special templates for each API, so that I
+could link developers to the relevant template for their API, so that I could
+assign the appropriate labels, and so that I could provide API-specific bug
+reporting instructions.</p>
+<p><img alt="templatemapsapi" src="_images/screenshot_issuetracking_template_mapsapi.png" /></p>
+<p>Since I wanted to make sure developers used templates whenever possible, I also
+modified the default generic user defect report to warn developers against using
+it:</p>
+<p><img alt="templategeneric" src="_images/screenshot_issuetracking_template_generic.png" /></p>
+<p>You can also use templates to specify the default owner for issues, if you want
+to put a particular project member in charge of triaging the issues. However,
+you can accomplish a similar effect using notification filter rules (described
+below).</p>
+</div>
+<div class="section" id="list-grid-view">
+<h4>List &amp; Grid View<a class="headerlink" href="#list-grid-view" title="Permalink to this headline">¶</a></h4>
+<p>The issue tracker provides various ways to visualize the issues, and numerous
+configuration options for the visualization.</p>
+<p>The default view is list view, and this is what the developer sees when clicking
+&#8220;Issues&#8221; or doing a search.
+This view shows one issue per row, and a subset of the labels as the columns.</p>
+<p><img alt="listview" src="_images/screenshot_issuetracking_listview.png" /></p>
+<p>When looking at a list view, the developer can further configure it by sorting
+based on other columns (by clicking the arrows), or choosing to view other
+columns (by clicking the &#8221;...&#8221; in the top right-hand of the header row).</p>
+<p>If you want developers to see a particular sorting/labels by default (and you
+probably do), you can configure that in the settings. The default is based on
+the default labels:</p>
+<p><img alt="listgrid" src="_images/screenshot_issuetracking_listgrid.png" /></p>
+<p>You should change that depending on your project labels, and on which you think
+are most important to be visualized at a glance. Here&#8217;s what I chose for the
+Maps API:</p>
+<p><img alt="listgridmapsapi" src="_images/screenshot_issuetracking_listgrid_mapsapi.png" /></p>
+<p>Note that both the default options and my options specified that the sorting is
+by stars. That means that the most starred issues will be at the top. This is
+both a blessing and a curse - it means that developers looking for common
+requests will be more likely to find them without searching, but it also means
+that the most starred issues will tend to get more starred, since those issues
+are shown to them more than others.  Just keep that in mind when you&#8217;re
+evaluating issues based on their starred count.</p>
+<p>The other view is grid view, and it is a very cool view that I really should use
+more often. It lets you visualize issues in multiple dimensions, and can give
+you a better feel for your issue distribution across status and other label
+values. Here&#8217;s an example grid visualizing the status of issues across the
+various Maps APIs. Immediately, I know which APIs need more triaging and
+resources thrown at them.</p>
+<p><img alt="gridview" src="_images/screenshot_issuetracking_gridview.png" /></p>
+<p>It&#8217;s good to bookmark useful grid visualizations and revisit them once a month,
+to spot trends or support needs. I will admit that I haven&#8217;t used grid view as
+much as I should, so I don&#8217;t have further tips past that.</p>
+</div>
+<div class="section" id="email-notifications">
+<h4>Email notifications<a class="headerlink" href="#email-notifications" title="Permalink to this headline">¶</a></h4>
+<p>The issue tracker lets you choose to send all notifications of issue activity
+(new issues, changed issues, commented issues) to a particular address, and it
+also lets you set rules to send label-dependent notifications to a particular
+address. You can use this feature to make sure that issue changes are always
+brought to the attention of a person and/or group of people.</p>
+<p>The default settings is to not send to anyone:</p>
+<p><img alt="notificationsdefault" src="_images/screenshot_issuetracking_notifications_default.png" /></p>
+<p>This setting is okay if you are very religious about bug triages and do them on
+a frequent basis, but as some filed bugs may in fact be quite urgent and need to
+be addressed within hours, I recommend sending all bugs to some attentive
+individual. You can also choose to send bugs to a Google Group, like one that
+contains just your product team, or one that is a help forum for the actual
+product. If you decide to send bugs to the latter, keep in mind that they can
+become quite noisy, and may deter developers from subscribing to the group. It
+very much depends on your particular developer community.</p>
+<p>For the open source <a class="reference external" href="http://code.google.com/p/gmaps-utility-library/">Maps API utility library</a>, I send all new issues to the
+mailing list of project developers, and this makes the developers more likely to
+pick up an issue and respond to it. For the Maps API, I send all issues to
+myself, and then send API-specific issues to the relevant colleagues:</p>
+<p><img alt="notifymapsapi" src="_images/screenshot_issuetracking_notify_mapsapi.png" /></p>
+</div>
+<div class="section" id="homepage">
+<h4>Homepage<a class="headerlink" href="#homepage" title="Permalink to this headline">¶</a></h4>
+<p>After you&#8217;ve spent all that time creating custom labels, templates, and
+searches, you will want to make sure developers can find them easily. One thing
+you can do is modify the home page of your project (in Administer-&gt;Project
+Summary) to include all the relevant links.</p>
+<p>For the Maps API, I list a section for each API, and then provide links to
+browse bugs &amp; feature requests, and to file bugs &amp; feature requests. These links
+address the most common reasons for developers coming to the issue tracker.</p>
+<p><img alt="homepage" src="_images/screenshot_issuetracking_homepage.png" /></p>
+<p>Some developers may ignore those links, click on the &#8220;Issues&#8221; tab, and be unsure
+how to deal with the long list of issues in front of them. If you find
+developers getting confused by that experience, you can replace the Issues tab
+with a wiki page (in Administer-&gt;Tabs), and that wiki page can describe how
+issue tracking works for your product. The <a class="reference external" href="http://code.google.com/p/opensocial-resources/wiki/IssuesTab?tm=3">OpenSocial issue tracker</a> takes that
+route:</p>
+<p><img alt="opensocial" src="_images/screenshot_issuetracking_opensocial.png" /></p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forum.html">Forum Support</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Issue Tracking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#issue-tracker-features">Issue Tracker Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#issue-handling-guidelines">Issue Handling Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#google-code-issue-tracker">Google Code Issue Tracker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topdevelopers.html">Top Developers</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+          <h3 style="margin-top: 1.5em;">Other Formats</h3>
+           <a href="http://www.lulu.com/product/paperback/developer-support-handbook/15214068">
+           <img src="http://static.lulu.com/product/paperback/developer-support-handbook/15214068/thumbnail/320" style="width:150px">
+           </a>
+           <p>
+           You can purchase a <a href="http://www.lulu.com/product/paperback/developer-support-handbook/15214068">print copy</a> or <a href="http://www.lulu.com/product/ebook/developer-support-handbook/15213896">download a PDF</a> at Lulu.com.
+           </p>
+           <br>
+           <p>You can also checkout the source files from <a href="https://github.com/pamelafox/developer-support-handbook/">Github</a>.</p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="forum.html" title="Forum Support"
+             >previous</a> |
+          <a href="communication.html" title="Communication"
+             >next</a> |
+          <a href="genindex.html" title="General Index"
+             >index</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2011, Pamela Fox.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="float: right; margin-left: 5px; border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />The materials are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>.
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

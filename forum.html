@@ -1,0 +1,505 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Forum Support &mdash; Developer Support Handbook</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.9',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Developer Support Handbook" href="index.html" />
+    <link rel="next" title="Issue Tracking" href="issuetracking.html" />
+    <link rel="prev" title="Documentation" href="documentation.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <h1><a href="index.html">Developer Support Handbook</a></h1>
+        <div class="rel">
+          <a href="documentation.html" title="Documentation"
+             accesskey="P">previous</a> |
+          <a href="issuetracking.html" title="Issue Tracking"
+             accesskey="N">next</a> |
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="forum-support">
+<h1>Forum Support<a class="headerlink" href="#forum-support" title="Permalink to this headline">¶</a></h1>
+<p>As an API provider, your main goal should be making sure that
+developers can successfully use your API. In a perfect world, a
+developer could read through the documentation, look at some sample
+code, and be able to write the exact app they were envisioning. But
+the world isn&#8217;t perfect, and more specifically, your API isn&#8217;t
+perfect and your documentation will never be 100% complete. In
+fact, it is nearly impossible to predict how developers will want
+to use your API, so it would be near impossible to document all the
+myriad ways that your API could be used. So, you need to help your
+developers out by providing a forum for them to ask questions
+and get help in debugging their app.</p>
+<p>Given infinite time, the eventual goal would be that the
+documentation would cover all the frequently asked questions and
+use cases in the group. But, resources
+are limited, and providing good forum support will always be a big part
+of making developers successful.</p>
+<p>The eventual goal of an API support forum is for a community of
+users to build up, and for these users to help eachother. Ideally,
+the majority of posts are answered by super users that are
+passionate about the API and enjoy helping others.</p>
+<div class="section" id="forum-features">
+<h2>Forum Features<a class="headerlink" href="#forum-features" title="Permalink to this headline">¶</a></h2>
+<p>There are various options for a discussion forum technology, each
+of them with their own set of features. Here are some standard features
+to look for:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#email-subscription"><em>Email subscription</em></a>: If you want developers responding to
+threads, they need an easy way to know when new threads are posted.</li>
+<li><a class="reference internal" href="#rss-feeds"><em>RSS feeds</em></a>: The more casual developers may prefer feeds,
+so they can browse new threads when they feel like it.</li>
+<li><a class="reference internal" href="#spam-handling"><em>Spam Handling</em></a>: Public forums are easily susceptile to spam,
+so good detection and moderation is a must.</li>
+<li><a class="reference internal" href="#poster-statistics"><em>Poster Statistics</em></a>: Developers will be more likely to post
+if it contributes to a visible statistics.</li>
+<li><a class="reference internal" href="#badging-system"><em>Badging System</em></a>: But badging systems can often be even more
+effective than statistics.</li>
+</ul>
+<p>Here are some of the forum options:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://groups.google.com">Google Groups</a>: Includes email, RSS, and spam handling, but
+not much in the way of statistics or badging.</li>
+<li><a class="reference external" href="http://stackoverflow.com">Stack Overflow</a>: Full-featured, and with a great tiered badging
+system. The main flaw is that it is all one big global forum,
+and may be harder to form a tangible community around a particular API.</li>
+<li><a class="reference external" href="http://getsatisfaction.com">GetSatisfaction</a>: Full-featured, and puts particular thought into
+the posting process. Distinguishes between posting questions, ideas,
+bugs, and praise; searches for similar questions; gives the poster
+tips for formulating their post; encourages adding tags and feelings
+to a post.</li>
+<li><a class="reference external" href="http://phpbb.com">phpBB</a>: Full-featured and open-source, it&#8217;s one of the original
+posting systems on the web.</li>
+<li><a class="reference external" href="http://zendesk.com">ZenDesk</a>: Full-featured, and includes the ability to turn
+threads into one-on-one customer support tickets or into articles.</li>
+</ul>
+<p>The features are discussed in more detail below, with references to
+the various forum technologies that I myself have tried.</p>
+<div class="section" id="email-subscription">
+<span id="id1"></span><h3>Email subscription<a class="headerlink" href="#email-subscription" title="Permalink to this headline">¶</a></h3>
+<p>In my experience, the most important feature for a developer forum is that users
+can sign up to a forum via email, and respond via email. This means that there&#8217;s
+a low barrier for replying to questions, and that developers can use their email
+or newsgroup reader of choice to manage their involvement in the group.</p>
+<p>Some forums may not offer email subscription, but will email users when a reply
+is made to their post, or perhaps email a summary of the week&#8217;s content. This is
+a step in the right direction, but I don&#8217;t think it encourages users responding
+to random posts as much as full email subscription does.</p>
+</div>
+<div class="section" id="rss-feeds">
+<span id="id2"></span><h3>RSS feeds<a class="headerlink" href="#rss-feeds" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s nice if a forum offers the ability to subscribe to the latest topics and
+posts in a forum. There are some developers that wouldn&#8217;t be willing to
+subscribe via email, but who will stick an RSS feed in their reader and glance
+at it occasionally. An RSS feed is also handy for feeding into gadgets for API
+landing pages or portals, and for doing analytics on (# of posts in a given
+period).</p>
+</div>
+<div class="section" id="spam-handling">
+<span id="id3"></span><h3>Spam Handling<a class="headerlink" href="#spam-handling" title="Permalink to this headline">¶</a></h3>
+<p>Developer forums are generally setup in a way that encourages more members -
+they are linked to from the documentation, blog posts, and the issue tracker,
+and they do not require approval to join. All of this is great for encouraging
+community, but unfortunately, it also is great for encouraging spammers.
+Unfortunately, spammers can potentially destroy a community. If you subscribed
+to a group and got 5 spammy messages from that group in the next day, you would
+probably think to yourself &#8220;Well, I&#8217;m willing to sacrifice leaving this group if
+it means not having to see those nasty messages in my inbox.&#8221;</p>
+<p>Ideally, a forum should have perfect spam detection, and either prevent spam
+messages from going to the forum at all, or send them to a moderation queue for
+you to approve/reject. If for some reason a message does get through, it should
+be easy to remove the message and ban the poster.</p>
+<p>Many forums do not have perfect spam detection, however, so they offer
+moderation features to help prevent spam. For example, Google Groups gives a
+group setting to moderate no posts, moderate the first post from a new user, or
+moderate all posts. For the high-traffic, high-spam-target Maps API group, we
+chose the second option. To make sure that developers do not have to wait too
+long before their post is moderated, we have managers from all across the world
+- US, UK, Australia. Some of the managers work for Google, but many of them are
+our trustworthy top posters. Be careful who you give moderation access to -
+some people are more ban-hungry than others, and will reject forum posts that
+are not spam, but do not quite meet their standards. When in doubt, let
+something through. It does not benefit you to be accused of censoring, and it
+doesn&#8217;t harm you if 1 or 2 spam posts get through each week.</p>
+</div>
+<div class="section" id="poster-statistics">
+<span id="id4"></span><h3>Poster Statistics<a class="headerlink" href="#poster-statistics" title="Permalink to this headline">¶</a></h3>
+<p>People love getting awards or high scores and showing them off. It may be silly
+and egotistical, but hey, that&#8217;s the specialty of our species, and a forum can
+take advantage of that feature/flaw to encourage people to post more. The basics
+stats that any forum can expose are the join date (so you know who the old
+timers are) and number of posts, and it does this both to encourage more posting
+and to let new people understand the experience level of the others in a thread.</p>
+<p>The screenshot below shows a standard PHPBB installation, being used for actual
+PHPBB support. Next to each post, a short user profile is displayed with an
+avatar, join date, number of posts, and join date.</p>
+<p><img alt="phpbb" src="_images/screenshot_phpbb.png" /></p>
+<p>But keep in mind that providing just those basic stats can be deceiving.
+Theoretically, a developer could post 1000 horribly uninformed posts, in an
+attempt to feel good about himself (or just get massive amounts of help).
+Luckily, this doesn&#8217;t usually happen.  Either a bad developer becomes a good
+developer in a much lower number of posts, or (un?)forunately, they realize that
+they are not well suited for the technological task and move on.</p>
+<p>Once in a blue moon, a poisonous developer may come along that defies the norms.
+In the Maps API group, we once had a developer that would post paragraphs of
+text that were not spam, but were just incredibly misinformed, and he would post
+these in un-related threads (commonly termed &#8220;hijacking&#8221;). The others in the
+forum first tried gently to teach him the ways of the forum, and then after it
+became clear that he was not ever going to respect them, I put him on permanent
+moderation and sent him an email informing him that we would let him back in as
+long as he followed the guidelines. It&#8217;s the only time I had to ban a non-spam
+user, but I&#8217;m happy I took that extreme step. He was a poison to the community,
+and he refused to rehabilitate himself. To bring this back to the original
+discussion - he was also the top poster that month, according to our group stats
+page. Short-term stats, like monthly top posters, are useful for finding
+potentially rising stars in the forum, but will also point to newbies that don&#8217;t
+yet &#8220;get it&#8221; - so be careful how you use those stats.</p>
+<p>Now, on the other hand, there are some highly experienced developers that don&#8217;t
+post often, but are incredibly knowledgeable when they do. This is often the
+case for developers that are highly specialized in one area of the technology,
+and thus only respond to very particular posts, or for developers with a
+fluctuating work schedule, and only find time to post either when their work
+calm downs, or when their work is actually using the technology heavily at the
+time. It&#8217;s hard to identify these developers from just their posting stats, but
+it&#8217;s usually easy to distinguish them by the quality of their few posts.</p>
+<p>If a forum allows users to rate posts, then the average ranking of posts is also
+a possible stat. The power of rating is a dangerous thing, however. It can be
+used for good - identifying those who frequently provide good answers to posts,
+but, more often than not, it can just as easily be used for bad- rating posts
+down because the answer isn&#8217;t what they wanted (even if it is correct). I got my
+lowest rating on a post when I announced that we had a Flash API in the
+JavaScript API forum, and that&#8217;s when I learned that there are alot of hardcore
+JS developers that absolutely hate Flash, and will punish you for even
+mentioning it. This reflects a fundamental flaw in just providing a generic star
+rating widget on a post, and not providing any guidance on its semantics. The
+intended meaning should be &#8220;is this answer helpful?&#8221;, but some users will take
+it to mean &#8220;does this post give you information that makes you unhappy?&#8221;, and
+the rating information loses its utility.  The screenshot below shows the Google
+Groups rating interface, which suffers from that problem:</p>
+<p><img alt="groupsrating" src="_images/screenshot_groupsratings.png" /></p>
+<p>Ideally, a forum should provide more guidance on any feedback mechanism it
+offers to posters, and then it will have more reliable data. Google Maps uses a
+propietary forum technology for its support, and it has targeted it towards the
+question-answer situation. In each reply to a post (each &#8220;answer&#8221;), the viewer
+is presented with the question &#8220;Did this answer your question?  Yes/No&#8221;, and
+then that data is used to designate threads as answered in the list view.
+Theoretically, this data could also be fed into the poster stats, but it&#8217;s not
+clear that it is.  The screenshot below shows a post that has been marked as
+answering the question by one user:</p>
+<p><img alt="u2urating" src="_images/screenshot_u2uratings.png" /></p>
+<p>Stack Overflow, a specialized forum for programming issues, offers what is
+probably the best rating interface. Next to each post, an up and down arrow is
+displayed. Upon hovering over an arrow, the tooltip displays &#8220;This answer is
+helpful&#8221; or &#8220;this answer is not helpful&#8221;, so the user understands what their
+vote means. In addition, only people with a reputation of &#8220;15&#8221; are allowed to
+vote at all. Developers join reputation points by posting good questions or good
+answers, and it only takes a few helpful posts to earn 15 points, so the bar is
+set relatively low.  It may anger some newbies that they cannot rate posts, but
+it likely helps their overall data by waiting for a user to
+demonstrate that they understand the system and are willing to
+contribute to the community. That voting data is then fed into the user&#8217;s
+overall reputation and also displayed in detail on their profile page.</p>
+<p>The screenshot below shows an answer on a StackOverflow page.
+Notice the tooltip over the up arrow, and the display of stats next to the
+mini-profile for the responder.</p>
+<p><img alt="stackoverflow" src="_images/screenshot_stackoverflow.png" /></p>
+<p>Another issue with ratings is that people also tend to provide ratings more
+often when they are feeling negative than when they are feeling positive - so
+ratings will skew toward the lower end, and if there is not enough rating data,
+then that skew may never be resolved. Google Groups suffers from lack of data,
+likely because many of the posters subscribe via email and never see the rating
+option in the web interface. In a web-only forum, it is likely that rating would
+be much more common, particularly if it&#8217;s as easy as clicking a few stars.</p>
+<p>Everyone on the web seems to want to throw a rating widget on everything - it&#8217;s
+the democratic way, and it&#8217;s the simplest form of feedback. But it&#8217;s not that
+simple, as you can now see. When using a forum with ratings or deciding whether
+to enable ratings on your forum, keep the above lessons in mind.</p>
+</div>
+<div class="section" id="badging-system">
+<span id="id5"></span><h3>Badging System<a class="headerlink" href="#badging-system" title="Permalink to this headline">¶</a></h3>
+<p>A badging system can serve as an alternative or a supplement to a ratings
+system. It can fulfill the goal of rewarding developers as well as the goal of
+revealing the experience level of a responder, while avoiding the issues in
+ratings. Typically, a forum will have various badge levels that a poster can
+attain, and those levels will cover the spectrum of involvement from a new
+member to an experienced developer to a group admin, and they may also denote
+different types of involvement in addition to quantity of involvement.</p>
+<p>For example, Ogre3d is an open-source game engine that uses PHPbb for their
+forums, and they use the following badges: &#8220;Newcomer&#8221;, &#8220;Familiar
+Face&#8221;,&#8221;Regular&#8221;, &#8220;Veteran&#8221;, &#8220;OGRE Contributor&#8221; (an open-source committer),
+&#8220;Bronze sponsor&#8221; (project donator), &#8220;OGRE Expert User&#8221;, and &#8220;OGRE Moderator&#8221;.
+These badges are displayed next to the author&#8217;s name on each post.
+The screenshot below is from a post between a newcomer and a moderator in the
+Ogre forum:</p>
+<p><img alt="ogre" src="_images/screenshot_phpbbbadges.png" /></p>
+</div>
+</div>
+<div class="section" id="posting-guidelines">
+<h2>Posting Guidelines<a class="headerlink" href="#posting-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>Even though the goal is for the forum to be dominated by user posts, a
+representative from the API provider should always be monitoring the forum,
+ensuring that it&#8217;s healthy and that there are no questions that require their
+answer. The users will feel good knowing that the API provider cares, and is
+listening, even if they are not responding to every post. There&#8217;s nothing worse
+than an abandoned support forum, and you should do your best to make it clear
+that you are there for them, when they actually need you.  Another reason for
+monitoring the forum is to look out for major outages or bugs. In my experience,
+a major bug will result in a flurry of posts in the forum in a short period of
+time, and monitoring the forum is often the quickest way to find out about major
+bugs.</p>
+<div class="section" id="deciding-when-to-post">
+<h3>Deciding When to Post<a class="headerlink" href="#deciding-when-to-post" title="Permalink to this headline">¶</a></h3>
+<p>There are two situations where an API provider will post in the
+forum. The first situation is when they are starting a new thread
+themself, and that situation is described in more detail in the
+&#8220;Communicating to Developers&#8221; section. The other situation is when
+they are responding in a developer-initiated thread, and that is
+what we&#8217;ll cover here.</p>
+<p>When deciding whether to reply to a thread, there are two things to
+keep in mind:</p>
+<ul class="simple">
+<li>It is nearly always preferred that an outside developer responds
+to a thread, as that encourages the idea that a forum is a
+community of super users, instead of a convenient way to mail the
+provider.</li>
+<li>It is not scalable for a provider to respond to all questions.
+Debugging can take a lot of time, and some posters are particularly
+needy. A provider needs to prioritize their time to respond to the
+most pressing, intelligently asked questions.</li>
+</ul>
+<p>Given those constraints, the below diagram shows the decision flow
+for determining when and if to respond:</p>
+<p><img alt="groupdiagram" src="_images/screenshot_groupsflow.jpg" /></p>
+<p>When a user posts in the group, review the post to determine its
+urgency. Basically, an urgent message would be one that signals a
+major outage, and these will happen rarely (hopefully, otherwise
+your API is in bad shape). If it is urgent, respond immediately to
+say that you&#8217;re looking to it, and if not, wait for a period of
+time. This waiting time is to give other developers a chance to
+respond to the post. Typically, I wait 2 days, but it could range
+from 1-7 days. Once you&#8217;ve waited your preferred duration of time,
+review the post again. If it has been answered by other developers,
+and those developers have answered the post with good, complete
+information, then you can archive it. If it either has not been
+answered at all or if it has been answered, but the answers were
+incorrect or unclear, then it becomes a candidate for you to
+respond to.</p>
+<p>The next step is to determine if the post meets qualifications for
+an API provider responding. The qualifications exist to make sure
+that the limited time you have is spent on the questions that are
+the most important. Here is my criteria for when the provider
+should absolutely respond:</p>
+<ul class="simple">
+<li>The user is reporting a bug with the API or documentation.</li>
+<li>You have information about a question that outside developers
+have no way of knowing. For instance, oftentimes someone posts that
+they are internally reaching the Static Maps API quota, and the
+super users typically respond that there is nothing that can be
+done. In fact, there is, so I will respond then and give them
+information on what to do.</li>
+</ul>
+<p>In addition, you may also want to respond if the question seems
+valid and particularly, if the question has come up multiple times
+in the group without a good answer. Since developers often search
+through the group when looking for answers to their questions, you
+want to make sure that they don&#8217;t search for a question and simply
+find an unanswered thread. That can be one of the most frustrating
+experiences for a developer that&#8217;s desperate for a solution.</p>
+</div>
+<div class="section" id="composing-you-reply">
+<h3>Composing You Reply<a class="headerlink" href="#composing-you-reply" title="Permalink to this headline">¶</a></h3>
+<p>When you do decide that a thread warrants your reply, here are some
+tips to follow when composing the reply:</p>
+<ul class="simple">
+<li><strong>Use a friendly, casual tone.</strong> Say &#8220;thanks&#8221; when relevant, and
+don&#8217;t be afraid to use smiley faces when it makes sense to.
+Remember, you want to make the forum into a positive place.</li>
+<li><strong>Address the poster in your reply.</strong> This both makes your reply
+seem more personal and caring, but it also makes it easier to read
+a thread when it forks into multiple tangents. If the poster signed
+with a name in their post, use that, otherwise use their username -
+e.g. &#8220;Hi Chris - &#8221; or &#8220;Hi dnk555 - &#8221;.</li>
+<li><strong>Make your answers succinct.</strong> Generally, nobody on the web
+wants to read more than a few paragraphs. At the same time, your
+answer shouldn&#8217;t be so short that it provokes a slew of additional
+questions.</li>
+<li><strong>Point to other resources when possible.</strong> Oftentimes, a
+developer will ask the question, and an answer will be somewhere in
+the documentation - in the terms, in the FAQ, in the demo gallery,
+etc. The fact that they have asked the question indicates that they
+have not read that part of the documentation. That&#8217;s not a criminal
+act - documentation can be daunting to read thoroughly - but it is
+something you want to encourage developers to do. So, always try to
+find the answer in the docs somewhere, and point the developers to
+that section. Check out this <a class="reference external" href="http://groups.google.com/group/google-maps-api-for-flash/browse_frm/thread/eaee4361c3085278">example thread</a>.</li>
+<li><strong>Don&#8217;t just post code - explain code.</strong> Many questions in a
+forum are a developer asking how to do X and Y. It is tempting to
+just spit code back to them that they can plug-and-play, but it
+does not make them into a better developer, and in fact it makes
+them into a greedy developer that thinks they can use the forum as
+their code completion factory. Instead, you want to give them code
+and explain the principles behind it. They may still not get it,
+but atleast you&#8217;ve given them the chance to learn.</li>
+<li><strong>Don&#8217;t engage with emotions - just facts.</strong> Some developers
+just aren&#8217;t happy developers, and they will get emotional on the
+forums - particularly if you&#8217;ve just introduced a bug into their
+site. It will not help for you to get emotional in your response,
+and it will likely make the situation worse. Just address the
+technical issue at hand to the best of your ability.</li>
+<li><strong>Don&#8217;t predict the future.</strong> A developer who is using your API
+is interested in two events in that may occur in the future: bugs
+being fixed, and features being fulfilled. As an official
+representative of the API, it is exceedingly dangerous to give a
+timeline for those events, or to even promise that they will occur.
+You may think that a feature is next on your to-do list, but then
+perhaps a natural disaster will strike, and it is now on the bottom
+(or, more realistically, you found a better feature to fulfill). If
+you tell a developer &#8220;Yes, we will do that, probably by date X&#8221;,
+and then you do not make good on that, your developer will lose
+faith in your ability to deliver. It is much better to say &#8220;that
+sounds like a good idea, we&#8217;ll look into it&#8221; and then surprise
+developers by delivering the feature. Bug fixes are a slightly
+different story, however, as 1) developers need to decide whether
+to invest time in a workaround, 2) the bugs are your fault, and you
+have an obligation to fix them. For bugs, I will usually tell
+developers when the actual code change is in that the bug is &#8220;fixed
+but not released&#8221;, and for regression bugs, I will generally try to
+give an exact timeline for the fix. This policy will vary depending
+on the openness of a team, and you should decide for yourselves how
+much you are willing to promise/reveal to developers.</li>
+<li><strong>Keep a unified front.</strong> If there are multiple representatives
+from your API posting in the forum, it is exceedingly important to
+act as a cohesive team. If another representative posts something
+that is incorrect, do not reply in the group and correct them.
+Instead, email that person and explain the error, and suggest a
+follow-up reply for them, e.g. &#8220;Update: I&#8217;ve looked into it more
+and realized.. &#8221; or &#8220;I&#8217;ve chatted with the team, and in fact, ...&#8221;.
+If a developer posts on an issue that you want fixed, but perhaps
+the rest of your team disagrees (it happens!), do not make a
+comment to that affect. The safest thing to say is always that the
+team is &#8220;looking into&#8221; or &#8220;considering&#8221; the issue at hand. Your
+developer community should see you as a team that works well
+together and makes good shit happen. Don&#8217;t lose their faith!</li>
+</ul>
+</div>
+<div class="section" id="posting-templates">
+<h3>Posting Templates<a class="headerlink" href="#posting-templates" title="Permalink to this headline">¶</a></h3>
+<p>Here are some template responses for common tricky questions:</p>
+<p><strong>Q</strong>: When will this feature come out? Are you working on it?</p>
+<p>A: &#8220;Our policy at [Company X] is to never disclose the timeline for
+upcoming products, features, or bug fixes. &#8221;
+&#8220;Please stay tuned to our blog (or changelog) for info on new
+features.&#8221;</p>
+<p><strong>Q</strong>: I&#8217;m experiencing this bug with the service.</p>
+<p>A: &#8220;I&#8217;ve been able to reproduce that and can confirm it is a bug.
+[Company X] Engineers (or &#8216;We&#8217;) are looking into it.</p>
+<p><strong>Q</strong>: I think that so and so feature would be a great addition.</p>
+<p>A: &#8220;That&#8217;s an interesting idea, thanks for sharing it here. I&#8217;ve
+shared it with the team.&#8221;</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Forum Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#forum-features">Forum Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#posting-guidelines">Posting Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="issuetracking.html">Issue Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="communication.html">Communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topdevelopers.html">Top Developers</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" size="18" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+          <h3 style="margin-top: 1.5em;">Other Formats</h3>
+           <a href="http://www.lulu.com/product/paperback/developer-support-handbook/15214068">
+           <img src="http://static.lulu.com/product/paperback/developer-support-handbook/15214068/thumbnail/320" style="width:150px">
+           </a>
+           <p>
+           You can purchase a <a href="http://www.lulu.com/product/paperback/developer-support-handbook/15214068">print copy</a> or <a href="http://www.lulu.com/product/ebook/developer-support-handbook/15213896">download a PDF</a> at Lulu.com.
+           </p>
+           <br>
+           <p>You can also checkout the source files from <a href="https://github.com/pamelafox/developer-support-handbook/">Github</a>.</p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="documentation.html" title="Documentation"
+             >previous</a> |
+          <a href="issuetracking.html" title="Issue Tracking"
+             >next</a> |
+          <a href="genindex.html" title="General Index"
+             >index</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2011, Pamela Fox.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="float: right; margin-left: 5px; border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br />The materials are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>.
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
