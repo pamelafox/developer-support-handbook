@@ -1,4 +1,4 @@
-This is the source of http://www.developer-support-handbook.org/
+This is the source of http://pamelafox.github.io/developer-support-handbook/
 It's written in RST, which theoretically makes it easy to output to HTML, LaTex, and other popular geeky formats.
 
 To make the HTML from the RST, download Sphinx:
